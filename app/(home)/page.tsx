@@ -1,13 +1,15 @@
-import Sidebar from "@/app/(home)/_components/Sidebar";
 import Hero from "./_components/Hero";
 import Blog from "./_components/Blog";
+import Sidebar from "./_components/Sidebar";
 
 export default function HomePage() {
   return (
-    <div>
+    <>
       <Sidebar />
-      <Hero />
-      <Blog />
-    </div>
+      <div className="p-4 max-w-7xl mx-auto lg:p-7">
+        <Hero />
+        <Blog />
+      </div>
+    </>
   );
 }
