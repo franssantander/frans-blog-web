@@ -9,7 +9,7 @@ export default function AboutMe() {
         <div className="lg:col-span-5 flex justify-center lg:justify-end">
           <div className="relative group">
             {/* Decorative ring */}
-            <div className="absolute -inset-4 rounded-full border border-dashed border-primary/20 animate-[spin_20s_linear_infinite]" />
+            <div className="absolute -inset-4 rounded-full border border-dashed border-primary/30 animate-[spin_20s_linear_infinite]" />
 
             <div className="relative w-64 h-64 lg:w-80 lg:h-80 overflow-hidden rounded-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out">
               <Image
@@ -36,11 +36,10 @@ export default function AboutMe() {
 
           <div className="space-y-6 text-neutral-400 text-lg leading-relaxed max-w-xl">
             <p>
-              I’m the solo founder behind{" "}
+              A programmer, musician, solo founder of{" "}
               <span className="text-foreground font-medium">RentHaven</span> and{" "}
               <span className="text-foreground font-medium">Local Po</span>, but
-              more than that, I’m just someone trying to figure things out — in
-              work, in life, and in who I’m becoming.
+              more than that, I’m just human obsessed with growth — in work, in life, and in who I’m becoming.
             </p>
 
             <p>
