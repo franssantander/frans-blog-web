@@ -27,19 +27,40 @@ export default function Footer() {
               </h4>
               <ul className="space-y-2 text-sm text-neutral-400">
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Twitter / X
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <Link
+                    href="https://github.com/franssantander"
+                    target="_blank"
+                    className="hover:text-white transition-colors"
+                  >
                     GitHub
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <Link
+                    href="https://www.linkedin.com/in/francebeam/"
+                    target="_blank"
+                    className="hover:text-white transition-colors"
+                  >
                     LinkedIn
-                  </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://www.instagram.com/franss.dev/"
+                    target="_blank"
+                    className="hover:text-white transition-colors"
+                  >
+                    Instagram
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="mailto:santanderfrancisbeam@gmail.com"
+                    target="_blank"
+                    className="hover:text-white transition-colors"
+                  >
+                    Email
+                  </Link>
                 </li>
               </ul>
             </div>
