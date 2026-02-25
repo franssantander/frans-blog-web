@@ -6,10 +6,8 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <section className="relative w-full py-32 overflow-hidden text-center">
-      {/* Background Glow */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,rgba(94, 94, 94, 0.15),transparent_60%)]" />
 
-      {/* Grid */}
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
 
       <motion.div
@@ -25,7 +23,7 @@ export default function Hero() {
             transition={{ delay: 0.2 }}
             className="text-primary font-medium tracking-widest text-sm uppercase"
           >
-            Francis Santander
+            Francis Beam
           </motion.h4>
 
           <motion.h1

@@ -6,36 +6,48 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui";
+import { Post } from "@/interfaces";
+import { ArrowRight02Icon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function CardLetter() {
-  const imgUrl =
-    "https://thedankoe.com/wp-content/uploads/2025/06/featured-2-768x430.png.webp";
+export default function CardLetter({ post }: { post: Post }) {
+  const { image, title, description, date, slug } = post;
 
   return (
-    <Card className="relative mx-auto w-full max-w-sm pt-0">
-      <div className="relative aspect-video w-full">
-        <Image src={imgUrl} alt="Event cover" fill className="object-cover" />
+    <Card className="relative flex flex-col w-full h-full pt-0 overflow-hidden border-white/5 bg-neutral-950/50">
+      <div className="relative aspect-video w-full shrink-0">
+        <Image src={image} alt={title} fill className="object-cover" />
         <div className="absolute inset-0 bg-black/30 z-10" />
       </div>
 
-      <CardHeader>
-        <CardTitle className="font-black text-3xl lg:text-2xl">
-          How to Disappear Completely
+      <CardHeader className="flex-1">
+        <CardTitle className="font-black text-2xl lg:text-3xl tracking-tighter text-white">
+          {title}
         </CardTitle>
-        <CardDescription className="text-base">
-          Not from the world but from expectations, noise, and the identity that
-          no longer serves you.
+
+        <CardDescription className="text-neutral-400 line-clamp-3 leading-relaxed">
+          {description}
         </CardDescription>
       </CardHeader>
 
-      <CardFooter className="flex items-center justify-between">
-        <div className="flex items-center gap-1 text-sm">
-          <span>February 27, 2026</span>
-        </div>
-        <Button className="max-w-full" size="lg">
-          <Link href="/letter/1">Read Full</Link>
+      <CardFooter className="flex items-center justify-between pt-4 mt-auto border-t border-white/5">
+        <span className="text-[10px] font-mono uppercase tracking-widest">
+          {date}
+        </span>
+        <Button
+          variant="ghost"
+          size="lg"
+          className="hover:text-primary transition-colors"
+        >
+          <Link
+            className="flex items-center gap-1 underline underline-offset-3"
+            href={`/letter/${slug}`}
+          >
+            Read Full
+            <HugeiconsIcon icon={ArrowRight02Icon} />
+          </Link>
         </Button>
       </CardFooter>
     </Card>

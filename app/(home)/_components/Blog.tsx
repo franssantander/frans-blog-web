@@ -1,25 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { Post } from "@/interfaces";
 import CardLetter from "./CardLetter";
+import useBlogHook from "../_hooks/useBlogHook";
 
-// This container variant handles the staggered animation of children
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1, // Each card will appear 0.1s after the previous one
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
-export default function Blog() {
+export default function Blog({ posts }: { posts: Post[] }) {
+  const { displayedPosts, hasMore, loadMore } = useBlogHook(posts);
   return (
     <section className="w-full py-32">
       <div>
@@ -47,34 +33,26 @@ export default function Blog() {
             </span>
           </div>
         </div>
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3 lg:max-w-6xl lg:mx-auto"
-        >
-          <motion.div variants={itemVariants}>
-            <CardLetter />
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <CardLetter />
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <CardLetter />
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <CardLetter />
-          </motion.div>
-        </motion.div>
-        <div className="mt-24 text-center">
-          <button className="text-sm font-bold text-white/40 hover:text-white transition-colors tracking-widest uppercase flex items-center gap-2 mx-auto group">
-            Browse All Archive
-            <span className="group-hover:translate-x-1 transition-transform">
-              →
-            </span>
-          </button>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:max-w-6xl lg:mx-auto items-stretch">
+          {displayedPosts?.map((post) => (
+            <div key={post.slug} className="flex">
+              <CardLetter post={post} />
+            </div>
+          ))}
         </div>
+        {hasMore && (
+          <div className="mt-24 text-center">
+            <button
+              onClick={loadMore}
+              className="text-sm font-bold text-white/40 hover:text-white transition-colors tracking-widest uppercase flex items-center gap-2 mx-auto group"
+            >
+              Browse All Archive
+              <span className="group-hover:translate-y-1 transition-transform">
+                ↓
+              </span>
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

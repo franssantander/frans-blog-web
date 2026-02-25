@@ -1,39 +1,44 @@
-import { Separator } from "@/components/ui";
-import React from "react";
+import { Separator } from "@/components/ui/separator";
+import { getPostBySlug } from "@/lib/markdown";
+import ReactMarkdown from "react-markdown";
 
-export default function LetterDetails() {
+export default async function LetterDetails({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const resolvedParams = await params;
+  const slug = resolvedParams?.slug;
+  if (!slug) return <div className="text-white">Invalid letter slug.</div>;
+  const post = getPostBySlug(slug);
+
+  if (!post)
+    return (
+      <div className="text-white">Letter not found in /content/letters.</div>
+    );
+
   return (
-    <div>
-      <div className="space-y-6">
-        <h1 className="text-5xl font-black">How to Disappear Completely</h1>
-        <div className="flex items-center gap-3 text-neutral-200 text-lg">
-          <span>January 8, 2026</span>
-          <Separator orientation="vertical" />
-          <span>Francis Beam</span>
+    <div className="max-w-3xl mx-auto py-10">
+      <header className="space-y-8 mb-16">
+        <h1 className="text-5xl md:text-6xl font-black tracking-tighter text-white leading-[0.9]">
+          {post.frontmatter.title}
+        </h1>
+
+        <div className="flex items-center gap-3 text-neutral-400 font-mono text-sm tracking-widest">
+          <span>{post.frontmatter.date}</span>
+          <Separator orientation="vertical" className="h-4 bg-white/10" />
+          <span>{post.frontmatter.author || "Francis Beam"}</span>
         </div>
-      </div>
-      <div className="py-10 text-neutral-200 text-lg space-y-7">
-        <p className="tracking-wide">
-          Most people don’t need a new life. They need a season of
-          disappearance. Not from the world - but from expectations, noise, and
-          the identity that no longer serves you.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid nisi
-          soluta minima maiores illo, ipsum excepturi sequi quos quasi, dolorem
-          laudantium quibusdam alias nulla voluptatibus dolore labore,
-          temporibus rerum quo.
-        </p>
-        <h1>Every morning you wake up into the same pattern.</h1>
-        <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
-          <li>Hit the snooze alarm 3 times.</li>
-          <li>test</li>
-          <li>Hit the snooze alarm 3 times.</li>
-          <li>Hit the snooze alarm 3 times.</li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
+      </header>
+
+      <div
+        className="prose prose-invert prose-neutral max-w-none 
+        prose-headings:text-white prose-headings:font-black prose-headings:tracking-tighter
+        prose-p:text-neutral-400 prose-p:leading-relaxed prose-p:text-lg
+        prose-li:text-neutral-400 prose-strong:text-white
+        prose-hr:border-white/5"
+      >
+        <ReactMarkdown>{post.content}</ReactMarkdown>
       </div>
     </div>
   );

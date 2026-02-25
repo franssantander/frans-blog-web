@@ -1,21 +1,25 @@
 import LetterDetails from "../_components/LetterDetails";
-import { Button } from "@/components/ui";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowLeft01FreeIcons } from "@hugeicons/core-free-icons";
 
-export default function BlogDetails() {
+export default async function LetterPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 container mx-auto px-4">
       <div>
-        <Link href="/">
-          <Button variant="secondary">
-            <HugeiconsIcon icon={ArrowLeft01FreeIcons} />
-            Back
-          </Button>
-        </Link>
+        <Button variant="secondary" size="lg" autoFocus>
+          <Link className="flex items-center gap-1" href="/">
+            <HugeiconsIcon icon={ArrowLeft01FreeIcons} size={18} />
+            <span>Back to Archive</span>
+          </Link>
+        </Button>
       </div>
-      <LetterDetails />
+      <LetterDetails params={params} />
     </div>
   );
 }
