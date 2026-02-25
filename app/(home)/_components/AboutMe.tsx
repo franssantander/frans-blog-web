@@ -39,8 +39,7 @@ export default function AboutMe() {
               A programmer, musician, solo founder of{" "}
               <span className="text-foreground font-medium">RentHaven</span> and{" "}
               <span className="text-foreground font-medium">Local Po</span>, but
-              more than that, I’m just human obsessed with growth — in work, in
-              life, and in who I’m becoming.
+              more than that, I’m just human obsessed with growth — in work, in life, and in who I’m becoming.
             </p>
 
             <p>
@@ -51,7 +50,7 @@ export default function AboutMe() {
 
             <p>
               I write about{" "}
-              <span className="italic text-neutral-300 text-yellow-300 drop-shadow-[0_0_15px_rgba(253,224,71,0.4)]">
+              <span className="italic text-neutral-300">
                 technology, philosophy, and personal growth
               </span>{" "}
               to understand things better — and to share what I learn along the

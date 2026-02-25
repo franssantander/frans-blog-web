@@ -17,9 +17,14 @@ export default function CardLetter({ post }: { post: Post }) {
 
   return (
     <Card className="relative flex flex-col w-full h-full pt-0 overflow-hidden border-white/5 bg-neutral-950/50">
-      <div className="relative aspect-video w-full shrink-0">
-        <Image src={image} alt={title} fill className="object-cover" />
-        <div className="absolute inset-0 bg-black/30 z-10" />
+      <div className="relative aspect-video w-full overflow-hidden group">
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
       </div>
 
       <CardHeader className="flex-1">

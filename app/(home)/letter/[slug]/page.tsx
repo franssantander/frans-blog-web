@@ -12,7 +12,7 @@ export default async function LetterPage({
   return (
     <div className="space-y-6 container mx-auto px-4">
       <div>
-        <Button variant="secondary" size="lg">
+        <Button variant="secondary" size="lg" autoFocus>
           <Link className="flex items-center gap-1" href="/">
             <HugeiconsIcon icon={ArrowLeft01FreeIcons} size={18} />
             <span>Back to Archive</span>

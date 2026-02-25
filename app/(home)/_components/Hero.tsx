@@ -2,13 +2,11 @@
 
 import { Button } from "@/components/ui";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section
-      className="relative w-full py-32 overflow-hidden text-center"
-      autoFocus
-    >
+    <section className="relative w-full py-32 overflow-hidden text-center">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,rgba(94, 94, 94, 0.15),transparent_60%)]" />
 
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
@@ -37,10 +35,7 @@ export default function Hero() {
           >
             Stop Living on <span className="text-neutral-500">Autopilot.</span>
             <br />
-            <span className="text-yellow-300 drop-shadow-[0_0_15px_rgba(253,224,71,0.4)]">
-              Build
-            </span>{" "}
-            the Mind That Builds the Life You Want.
+            Build the Mind That Builds the Life You Want.
           </motion.h1>
 
           <motion.p
@@ -61,8 +56,8 @@ export default function Hero() {
           transition={{ delay: 0.7 }}
           className="flex flex-col items-center gap-4"
         >
-          <Button size="lg" className="p-6 text-md">
-            Explore The System
+          <Button size="lg" className="p-5 text-md">
+            <Link href="/letters">Browse Letter</Link>
           </Button>
 
           <p className="text-sm text-neutral-500">
