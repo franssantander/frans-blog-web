@@ -29,7 +29,7 @@ export default function AboutMe() {
             <h4 className="text-primary font-medium tracking-widest text-sm uppercase">
               The Creator
             </h4>
-            <h2 className="font-black text-5xl lg:text-5xl tracking-tighter leading-none">
+            <h2 className="font-black text-5xl tracking-tighter leading-none">
               Hi, I’m Francis.
             </h2>
           </div>
