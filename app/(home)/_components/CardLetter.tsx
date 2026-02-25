@@ -5,9 +5,9 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-  Separator,
 } from "@/components/ui";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function CardLetter() {
   const imgUrl =
@@ -35,7 +35,7 @@ export default function CardLetter() {
           <span>February 27, 2026</span>
         </div>
         <Button className="max-w-full" size="lg">
-          Read Full
+          <Link href="/letter/1">Read Full</Link>
         </Button>
       </CardFooter>
     </Card>

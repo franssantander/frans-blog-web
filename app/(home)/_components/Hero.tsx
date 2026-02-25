@@ -6,7 +6,7 @@ export default function Hero() {
     <div className="w-full py-40 mx-auto text-center space-y-7">
       <div className="space-y-3">
         <h4 className="text-neutral-400 tracking-[.25em] text-sm uppercase">
-          Francis
+          Francis Santander
         </h4>
         <h1 className="font-black text-4xl max-w-xl mx-auto lg:text-5xl">
           Build Your Mind. Break the Default. Design Your Life.

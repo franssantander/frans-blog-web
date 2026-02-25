@@ -1,12 +1,14 @@
 import Image from "next/image";
-import FrancisLogo from "@/assets/frans-logo-dark.svg";
+import FrancisLogo from "@/assets/frans-dark-logo.svg";
 import Link from "next/link";
 
-export default function Sidebar() {
+export default function Navbar() {
   return (
     <div className="bg-background/80 backdrop-blur-md sticky top-0 z-50">
       <div className="px-4 py-6 max-w-7xl mx-auto lg:px-7 h-full flex items-center justify-between">
-        <Image src={FrancisLogo} alt="Frans Logo" width={40} height={40} />
+        <Link href="/">
+          <Image src={FrancisLogo} alt="Frans Logo" width={40} height={40} />
+        </Link>
         <ul className="hidden md:flex items-center gap-6 text-sm font-medium">
           <li>
             <Link href="/" className="hover:text-primary transition-colors">
