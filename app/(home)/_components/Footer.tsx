@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="md:col-span-5 space-y-6">
             <Link href="/" className="text-xl font-black  text-white">
-              FRANCIS<span className="text-white/40">LETTERS.</span>
+              FRANCIS LETTERS.
             </Link>
             <p className="text-neutral-500 max-w-sm leading-relaxed">
               Documenting the journey: creating, experimenting, and learning
@@ -21,11 +21,11 @@ export default function Footer() {
 
           {/* Navigation Sections */}
           <div className="">
-            <div className="space-y-4">
+            <div className="space-y-4 lg:space-y-2">
               <h4 className="text-xs font-bold uppercase tracking-widest text-white/40">
                 Social
               </h4>
-              <ul className="space-y-2 text-sm text-neutral-400">
+              <ul className="space-y-2 text-sm text-neutral-400 lg:flex lg:gap-6 lg:space-y-0">
                 <li>
                   <Link
                     href="https://github.com/franssantander"

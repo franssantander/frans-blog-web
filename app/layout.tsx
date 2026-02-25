@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark scroll-smooth">
       <body className={`${poppins.variable} antialiased`}>
         <div className="relative h-screen w-full overflow-hidden bg-background flex flex-col md:flex-row">
           <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">

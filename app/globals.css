@@ -123,7 +123,7 @@
     font-family: var(--font-poppins);
   }
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth !important;
   }
   body {
     @apply bg-background text-foreground;

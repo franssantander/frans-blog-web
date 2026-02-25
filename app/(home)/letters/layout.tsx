@@ -3,7 +3,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <div className="max-w-2xl mx-auto px-4 py-20 scroll-smooth">{children}</div>
-  );
+  return <div className="scroll-smooth">{children}</div>;
 }
