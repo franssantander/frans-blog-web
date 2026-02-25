@@ -21,8 +21,8 @@ const itemVariants = {
 
 export default function Blog() {
   return (
-    <section className="w-full py-32 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section className="w-full py-32">
+      <div>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20 border-b border-white/5 pb-10">
           <div className="space-y-4">
             <h4 className="text-primary font-medium tracking-[.3em] text-xs uppercase">
@@ -47,16 +47,13 @@ export default function Blog() {
             </span>
           </div>
         </div>
-
-        {/* The Grid: Staggered Entrance */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3"
+          className="grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3 lg:max-w-6xl lg:mx-auto"
         >
-          {/* We wrap each CardLetter in a motion.div to apply the stagger */}
           <motion.div variants={itemVariants}>
             <CardLetter />
           </motion.div>
@@ -70,8 +67,6 @@ export default function Blog() {
             <CardLetter />
           </motion.div>
         </motion.div>
-
-        {/* Bottom CTA for a sense of depth */}
         <div className="mt-24 text-center">
           <button className="text-sm font-bold text-white/40 hover:text-white transition-colors tracking-widest uppercase flex items-center gap-2 mx-auto group">
             Browse All Archive
